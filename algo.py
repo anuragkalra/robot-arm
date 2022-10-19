@@ -1,4 +1,5 @@
 import itertools
+from utility import to_cycles
 
 def generate_numeric_tokens(s):
     tokens = [ord(c) - 64 for c in s]
@@ -7,7 +8,6 @@ def generate_numeric_tokens(s):
     return tokens
 
 def remove_cycle(arr, cycle):
-    print("remove_cycle:	", cycle)
     special = max(arr)
     if special not in cycle:
     	cycle.sort()
@@ -54,12 +54,10 @@ def build_map(arr):
     d[arr_len - 1] = '_'
     return d
 
-
-
-
-
-
-
+def find_shortest_path(input, debug = False):
+    numeric_tokens = generate_numeric_tokens(input)
+    cycles = to_cycles(numeric_tokens)
+    remove_all_cycles(numeric_tokens, cycles)
 
 
 

@@ -1,5 +1,4 @@
 def to_cycles(perm):
-    # pi = dict([i + 1, perm[i]] for i, _ in enumerate(perm))
     pi = {i + 1: perm[i] for i, _ in enumerate(perm)}
     cycles = []
     while pi:
