@@ -6,37 +6,34 @@ def generate_numeric_tokens(s, debug = False):
         print("Numeric Tokens:  ", tokens)
     return tokens
 
-def remove_cycle(arr, cycle):
+def remove_cycle(arr, cycle, debug = False):
     special = max(arr)
+    if debug:
+        print("Removing Cycle:  ", cycle)
     if special not in cycle:
     	cycle.sort()
     	for c in cycle:
-    		apply_movement_number(arr, c, special)
-    		# print(map_to_letters(arr))
-    	apply_movement_number(arr, cycle[0], special)
-    	# print(map_to_letters(arr))
+    		apply_movement_number(arr, c, special, debug)
+    	apply_movement_number(arr, cycle[0], special, debug)
     else:
     	special_index = cycle.index(special)
-    	# print("Special cycle:	", cycle)
     	cycle = cycle[special_index:] + cycle[:special_index]
-    	# print("Rotated cycle:	", cycle)
     	for i in range(len(cycle) - 1, 0, -1):
-    	    apply_movement_number(arr, cycle[i], special)
-    	    # print(map_to_letters(arr))
-    	    # print(arr)
+    	    apply_movement_number(arr, cycle[i], special, debug)
 
-def remove_all_cycles(arr, cycles):
+def remove_all_cycles(arr, cycles, debug = False):
     for i, cycle in enumerate(cycles):
         if len(cycle) == 1:
             continue
-        remove_cycle(arr, cycle)
+        remove_cycle(arr, cycle, debug)
 
-def apply_movement_number(arr, start_number, end_number):
+def apply_movement_number(arr, start_number, end_number, debug = False):
     start_index = arr.index(start_number)
     end_index = arr.index(end_number)
     print(f"{start_index},{end_index}")
     apply_movement(arr, start_index, end_index)
-    print(map_to_letters(arr))
+    if debug:
+        print(map_to_letters(arr))
 
 
 def apply_movement(arr, start_index, end_index):
@@ -58,7 +55,7 @@ def find_shortest_path(input, debug = False):
         print("Input:   ", input)
     numeric_tokens = generate_numeric_tokens(input, debug)
     cycles = to_cycles(numeric_tokens, debug)
-    remove_all_cycles(numeric_tokens, cycles)
+    remove_all_cycles(numeric_tokens, cycles, debug)
 
 def to_cycles(perm, debug = False):
     pi = {i + 1: perm[i] for i, _ in enumerate(perm)}
