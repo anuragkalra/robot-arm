@@ -1,10 +1,9 @@
-import itertools
-from utility import to_cycles
-
-def generate_numeric_tokens(s):
+def generate_numeric_tokens(s, debug = False):
     tokens = [ord(c) - 64 for c in s]
     max_index = tokens.index(max(tokens))
     tokens[max_index] = len(tokens)
+    if debug:
+        print("Numeric Tokens:  ", tokens)
     return tokens
 
 def remove_cycle(arr, cycle):
@@ -55,11 +54,30 @@ def build_map(arr):
     return d
 
 def find_shortest_path(input, debug = False):
-    numeric_tokens = generate_numeric_tokens(input)
-    cycles = to_cycles(numeric_tokens)
+    if debug:
+        print("Input:   ", input)
+    numeric_tokens = generate_numeric_tokens(input, debug)
+    cycles = to_cycles(numeric_tokens, debug)
     remove_all_cycles(numeric_tokens, cycles)
 
-
-
-
+def to_cycles(perm, debug = False):
+    pi = {i + 1: perm[i] for i, _ in enumerate(perm)}
+    cycles = []
+    while pi:
+        elem = next(iter(pi))
+        this_elem = pi[elem]
+        next_item = pi[this_elem]
+        cycle = []
+        while True:
+            cycle.append(this_elem)
+            del pi[this_elem]
+            this_elem = next_item
+            if next_item in pi:
+                next_item = pi[next_item]
+            else:
+                break
+        cycles.append(cycle)
+    if debug:
+        print("Cycles:  ", cycles)
+    return cycles
 
