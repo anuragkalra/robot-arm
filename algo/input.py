@@ -7,19 +7,19 @@ def validate_ordering_input(s):
         temp.append(chr(i + ord('A')))
     temp[len(temp) - 1] = '_'
     if temp != tokens:
-    	print("Invalid token input")
+    	print("Error: Invalid token input")
     	return False
     return True
 
 def validate_debug_input(s):
     if s == "True" or s == "true" or s == "TRUE":
-        print(s," looks okay")	
+        # print(s," looks okay")	
         return 1
     if s == "False" or s == "false" or s == "FALSE":
-        print(s," looks okay")
+        # print(s," looks okay")
         return 2
     else:
-        print(s," has issue")
+        print("Error: Invalid debug flag")
         return 3
 	
 # s = '_ABC'
