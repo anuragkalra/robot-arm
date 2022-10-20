@@ -2,17 +2,6 @@ import sys
 from algo import *
 from input import *
 
-# print("Running standard mode...")
-# find_shortest_path(input)
-
-# print("Running debug mode...")
-# moves = find_shortest_path(input, debug=True)
-# print(moves)
-# find_shortest_path(input)
-
-#BC_A
-#true BC_A
-
 def main():
     n = len(sys.argv)
     if n == 2 and validate_ordering_input(sys.argv[1]):

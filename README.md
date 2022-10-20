@@ -46,3 +46,9 @@ python3 main.py false 'BC_A'
 0,1
 3,0
 ```
+
+### Testing
+```
+cd tests
+python3 test_algo.py
+```

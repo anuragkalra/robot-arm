@@ -51,14 +51,16 @@ class TestMethods(unittest.TestCase):
     	arr = [1, 2, 3]
     	start_number = 2
     	end_number = 3
-    	algo.apply_movement_number(arr, start_number, end_number)
+    	moves = []
+    	algo.apply_movement_number(arr, start_number, end_number, moves)
     	expected = [1, 3, 2]
     	self.assertEqual(arr, expected)
 
     	arr = [1, 2, 3]
     	start_number = 3
     	end_number = 1
-    	algo.apply_movement_number(arr, start_number, end_number)
+    	moves = []
+    	algo.apply_movement_number(arr, start_number, end_number, moves)
     	expected = [3, 2, 1]
     	self.assertEqual(arr, expected)
 
