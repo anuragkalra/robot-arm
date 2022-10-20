@@ -64,6 +64,17 @@ class TestMethods(unittest.TestCase):
     	expected = [3, 2, 1]
     	self.assertEqual(arr, expected)
 
+    def test_find_shortest_path(self):
+    	input = 'BC_A'
+    	moves = algo.find_shortest_path(input)
+    	expected = [[1, 2], [0, 1], [3, 0]]
+    	self.assertEqual(moves, expected)
+
+    	input = 'A_CB'
+    	moves = algo.find_shortest_path(input)
+    	expected = [[3, 1]]
+    	self.assertEqual(moves, expected)    	
+
 
 if __name__ == '__main__':
     unittest.main()
