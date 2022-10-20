@@ -6,7 +6,7 @@ This program provides a command-line-interace which allows for two options:
 
 ### Single option: ordering_flag
 ```python3 main.py 'BC_A'```
-Passing only an ordering will run the program in standard (non-debug) mode
+Passing only an ordering will run the program in standard (non-debug) mode.
 Invalid ordering_flag option will lead to an error message and program exit.
 
 ### Two options: debug_flag, ordering_flag
@@ -17,6 +17,7 @@ Running in debug mode will show additional logging to demonstrate the state of t
 
 ### Example program execution
 ```
+cd main
 python3 main.py 'BC_A'
 1,2
 0,1
