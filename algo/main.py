@@ -30,8 +30,6 @@ def main():
 def run_program(ordering_flag, debug_flag):
     if debug_flag:
         print("Running debug mode...")
-    else:
-        print("Running standard mode...")
     find_shortest_path(ordering_flag, debug_flag)
 
 if __name__ == '__main__':
