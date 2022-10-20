@@ -1,6 +1,6 @@
 # Description
 
-This python program simulates a robot arm moving containers between holders. The core method, ```find_shortest_path``` returns a python List which contains the sequence of moves that a robot arm can take to bring the containers to a sorted order.
+This python program simulates a robot arm moving containers between holders. The program relies on an installation of python3. The core method, ```find_shortest_path``` returns a python List which contains the sequence of moves that a robot arm can take to bring the containers to a sorted order.
 
 This program provides a command-line-interace which allows for two options:
 
