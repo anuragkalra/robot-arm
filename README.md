@@ -50,5 +50,5 @@ python3 main.py false 'BC_A'
 ### Testing
 ```
 cd tests
-python3 test_algo.py
+python3 test_algo.py -b
 ```
