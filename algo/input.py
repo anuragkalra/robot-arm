@@ -14,12 +14,13 @@ def validate_ordering_input(s):
 def validate_debug_input(s):
     if s == "True" or s == "true" or s == "TRUE":
         print(s," looks okay")	
-        return True
+        return 1
     if s == "False" or s == "false" or s == "FALSE":
         print(s," looks okay")
-        return False
+        return 2
     else:
         print(s," has issue")
+        return 3
 	
 # s = '_ABC'
 # print(validate_ordering_input(s))
