@@ -51,4 +51,9 @@ python3 main.py false 'BC_A'
 ```
 cd tests
 python3 test_algo.py -b
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK
 ```
