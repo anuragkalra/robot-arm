@@ -11,6 +11,8 @@ def validate_ordering_input(s):
     	return False
     return True
 
+#True flags: True, true, TRUE, debug=True
+#False flags: False, false, FALSE, debug=false
 def validate_debug_input(s):
     if s == "True" or s == "true" or s == "TRUE" or s == "debug=True":
         return 1
