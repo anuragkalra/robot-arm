@@ -12,9 +12,9 @@ def validate_ordering_input(s):
     return True
 
 def validate_debug_input(s):
-    if s == "True" or s == "true" or s == "TRUE":	
+    if s == "True" or s == "true" or s == "TRUE" or s == "debug=True":
         return 1
-    if s == "False" or s == "false" or s == "FALSE":
+    if s == "False" or s == "false" or s == "FALSE" or s == "debug=False":
         return 2
     else:
         print("Error: Invalid debug flag")

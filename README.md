@@ -11,7 +11,7 @@ Invalid ordering_flag option will lead to an error message and program exit.
 
 ### Two options: debug_flag, ordering_flag
 ```python3 main.py true 'BC_A'```
-debug_flag can take values of 'True', 'true', 'TRUE' or 'False', 'false', 'FALSE'
+debug_flag can take values of 'True', 'true', 'TRUE', 'debug=True' or 'False', 'false', 'FALSE', 'debug=False'
 Invalid debug_flag option will lead to to an error message and program exit.
 Running in debug mode will show additional logging to demonstrate the state of the algorithm.
 
